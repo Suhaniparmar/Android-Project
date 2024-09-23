@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="24dp">
+
+    <!-- Sign Up Title -->
+    <TextView
+        android:id="@+id/Title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create new Account"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Already Registered text -->
+    <TextView
+        android:id="@+id/alreadyRegisteredText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already Registered?"
+        android:textColor="#A4A4A4"
+        android:textSize="14sp"
+        android:layout_below="@id/Title1"
+        android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Log in Link -->
+    <TextView
+
+        android:id="@+id/loginLink1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:textColor="#00A000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_toRightOf="@id/alreadyRegisteredText1"
+        android:layout_below="@id/Title1"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_alignBaseline="@id/alreadyRegisteredText1" />
+
+    <!-- Name Field -->
+    <EditText
+        android:id="@+id/nameEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:hint="NAME"
+
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_below="@id/loginLink1"
+        android:textColorHint="#FFFFFF" />
+
+    <!-- Email Field -->
+    <EditText
+        android:id="@+id/emailEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:hint="EMAIL"
+
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_below="@id/nameEditText1"
+        android:textColorHint="#FFFFFF"
+        android:inputType="textEmailAddress" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/passwordEditText1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:hint="PASSWORD"
+
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_below="@id/emailEditText1"
+        android:textColorHint="#FFFFFF"
+        android:inputType="textPassword" />
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/signUpButton1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="sign up"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:backgroundTint="#00A000"
+
+        android:layout_marginTop="24dp"
+        android:layout_below="@id/passwordEditText1" />
+
+</RelativeLayout>

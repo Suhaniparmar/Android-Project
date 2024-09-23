@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="24dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="#121212">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate Your Skills"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <!-- Example question -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Structures and Algorithms"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/dsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Problem Solving and logical thinking"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/pss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System Design"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/sd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Programming Language Proficiency"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/plp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Object Oriented Programming and Design Patterns"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/ood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Version Control"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/vc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Database Management System"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/dbms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Operating System and Networking"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/os"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cloud and Devops"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/cnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Testing and Debugging"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/tnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Behavioral and Leadership Skills"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:paddingBottom="8dp" />
+        <EditText
+            android:id="@+id/ss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FF00"
+            android:hint="Enter rating (1-10)"
+            android:textColorHint="#B0B0B0"
+            android:inputType="number"
+            android:padding="16dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Submit button -->
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Submit"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#388E3C"
+            android:padding="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"/>
+    </LinearLayout>
+</ScrollView>
