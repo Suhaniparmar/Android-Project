@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodeSyncTest"
         tools:targetApi="31">
+
+        <activity
+            android:name=".QuizAssessmentActivity"
+            android:exported="false" />
         <activity
             android:name=".ResultAmazon"
             android:exported="false" />
