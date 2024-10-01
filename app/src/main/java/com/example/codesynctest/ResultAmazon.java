@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class ResultAmazon extends AppCompatActivity {
 
     private TextView textView;
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
