@@ -1,5 +1,5 @@
 // File: QuizAssessmentActivity.java
-package com.example.codesynctest;
+package com.example.codesynctest.quiz;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.codesynctest.R;
 
 public class QuizAssessmentActivity extends AppCompatActivity {
 
