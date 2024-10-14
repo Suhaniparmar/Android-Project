@@ -1,6 +1,7 @@
 // File: QuizAssessmentActivity.java
 package com.example.codesynctest.quiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,15 +32,21 @@ public class QuizAssessmentActivity extends AppCompatActivity {
     private String[] questions = {
             "What is your proficiency level in data structures?",
             "What is your proficiency level in algorithms?",
-            "What is your proficiency level in Java?"
-
+            "What is your proficiency level in Java?",
+            "What is your proficiency level in databases?",
+            "What is your proficiency level in web development?"
     };
     private String[][] options = {
+            {"Beginner", "Intermediate", "Advanced", "Expert"},
+            {"Beginner", "Intermediate", "Advanced", "Expert"},
             {"Beginner", "Intermediate", "Advanced", "Expert"},
             {"Beginner", "Intermediate", "Advanced", "Expert"},
             {"Beginner", "Intermediate", "Advanced", "Expert"}
     };
     private int currentQuestionIndex = 0;
+
+    // Array to store user's selected answers
+    private int[] userAnswers; // Stores the selected option index for each question
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +66,12 @@ public class QuizAssessmentActivity extends AppCompatActivity {
         prevButton = findViewById(R.id.prev_button);
         nextButton = findViewById(R.id.next_button);
 
+        // Initialize userAnswers array
+        userAnswers = new int[questions.length];
+        for (int i = 0; i < userAnswers.length; i++) {
+            userAnswers[i] = -1; // -1 indicates no selection
+        }
+
         // Log the start of the activity
         Log.d(TAG, "QuizAssessmentActivity started");
 
@@ -70,25 +83,36 @@ public class QuizAssessmentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int selectedOptionId = optionsGroup.getCheckedRadioButtonId();
-                if (selectedOptionId == -1) {
-                    Toast.makeText(QuizAssessmentActivity.this, "Please select an option", Toast.LENGTH_SHORT).show();
-                } else {
-                    RadioButton selectedOption = findViewById(selectedOptionId);
-                    String answer = selectedOption.getText().toString();
-                    Toast.makeText(QuizAssessmentActivity.this, "Answer submitted: " + answer, Toast.LENGTH_SHORT).show();
-
-                    // Optionally, save the answer or proceed to the next question
-                    // For this example, we'll proceed to the next question automatically
-                    if (currentQuestionIndex < questions.length - 1) {
-                        currentQuestionIndex++;
-                        updateQuestion();
-                    } else {
-                        Toast.makeText(QuizAssessmentActivity.this, "Quiz Completed!", Toast.LENGTH_LONG).show();
-                        // Optionally, navigate to a results screen or finish the activity
-                        finish();
+                // Check if all questions are answered
+                boolean allAnswered = true;
+                for (int answer : userAnswers) {
+                    if (answer == -1) {
+                        allAnswered = false;
+                        break;
                     }
                 }
+
+                if (!allAnswered) {
+                    Toast.makeText(QuizAssessmentActivity.this, "Please answer all questions before submitting", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Calculate total score
+                int totalScore = 0;
+                for (int answer : userAnswers) {
+                    // Assign scores: Beginner=1, Intermediate=2, Advanced=3, Expert=4
+                    totalScore += (answer + 1);
+                }
+
+                Log.d(TAG, "Total Score: " + totalScore);
+
+                // Determine eligible companies based on total score
+                String[] eligibleCompanies = determineEligibleCompanies(totalScore);
+
+                // Navigate to EligibleCompaniesActivity
+                Intent intent = new Intent(QuizAssessmentActivity.this, EligibleCompaniesActivity.class);
+                intent.putExtra("eligible_companies", eligibleCompanies);
+                startActivity(intent);
             }
         });
 
@@ -119,6 +143,27 @@ public class QuizAssessmentActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // Option selection listener to save user's answer
+        optionsGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int selectedOption = -1;
+                if (checkedId == R.id.option_one) {
+                    selectedOption = 0;
+                } else if (checkedId == R.id.option_two) {
+                    selectedOption = 1;
+                } else if (checkedId == R.id.option_three) {
+                    selectedOption = 2;
+                } else if (checkedId == R.id.option_four) {
+                    selectedOption = 3;
+                } else {
+                    Log.w(TAG, "Unknown RadioButton checkedId: " + checkedId);
+                }
+                userAnswers[currentQuestionIndex] = selectedOption;
+                Log.d(TAG, "Question " + currentQuestionIndex + " selected option: " + selectedOption);
+            }
+        });
     }
 
     /**
@@ -138,10 +183,41 @@ public class QuizAssessmentActivity extends AppCompatActivity {
         int progress = ((currentQuestionIndex + 1) * 100) / questions.length;
         quizProgress.setProgress(progress);
 
-        // Clear previous selection
-        optionsGroup.clearCheck();
+        // Restore previous selection if any
+        if (userAnswers[currentQuestionIndex] != -1) {
+            if (userAnswers[currentQuestionIndex] == 0) {
+                optionsGroup.check(R.id.option_one);
+            } else if (userAnswers[currentQuestionIndex] == 1) {
+                optionsGroup.check(R.id.option_two);
+            } else if (userAnswers[currentQuestionIndex] == 2) {
+                optionsGroup.check(R.id.option_three);
+            } else if (userAnswers[currentQuestionIndex] == 3) {
+                optionsGroup.check(R.id.option_four);
+            } else {
+                Log.w(TAG, "Unknown user answer index: " + userAnswers[currentQuestionIndex]);
+                optionsGroup.clearCheck();
+            }
+        } else {
+            optionsGroup.clearCheck();
+        }
 
         // Log the question update
         Log.d(TAG, "Displayed question index: " + currentQuestionIndex + ", Progress: " + progress + "%");
+    }
+
+    /**
+     * Determines eligible companies based on the total score.
+     *
+     * @param totalScore The total score calculated from user's answers.
+     * @return An array of eligible companies.
+     */
+    private String[] determineEligibleCompanies(int totalScore) {
+        if (totalScore <= questions.length * 1.5) { // Approximately Beginner to Intermediate
+            return new String[]{"Startup A", "Company B", "Firm C"};
+        } else if (totalScore <= questions.length * 2.5) { // Intermediate to Advanced
+            return new String[]{"Company D", "Enterprise E", "Organization F"};
+        } else { // Advanced to Expert
+            return new String[]{"Global Tech G", "Innovate H", "Solutions I"};
+        }
     }
 }

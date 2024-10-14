@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodeSyncTest"
         tools:targetApi="31">
-
+        <activity
+            android:name=".quiz.EligibleCompaniesActivity"
+            android:exported="false" />
         <activity
             android:name=".quiz.QuizAssessmentActivity"
             android:exported="false" />
