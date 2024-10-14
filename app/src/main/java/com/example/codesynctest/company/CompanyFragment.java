@@ -1,4 +1,4 @@
-package com.example.codesynctest;
+package com.example.codesynctest.company;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.codesynctest.LoginActivity;
+import com.example.codesynctest.R;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.codesynctest;
+package com.example.codesynctest.company;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.widget.ArrayAdapter;
+
+import com.example.codesynctest.R;
+
 import java.util.ArrayList;
 
 public class CompanyAdapter extends ArrayAdapter<Company> {

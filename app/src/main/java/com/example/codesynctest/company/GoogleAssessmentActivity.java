@@ -1,4 +1,4 @@
-package com.example.codesynctest;
+package com.example.codesynctest.company;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.codesynctest.R;
 
 public class GoogleAssessmentActivity extends AppCompatActivity {
 

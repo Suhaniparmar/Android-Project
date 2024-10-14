@@ -17,19 +17,19 @@
             android:name=".QuizAssessmentActivity"
             android:exported="false" />
         <activity
-            android:name=".ResultAmazon"
+            android:name=".company.ResultAmazon"
             android:exported="false" />
         <activity
-            android:name=".AmazonAssessmentActivity"
+            android:name=".company.AmazonAssessmentActivity"
             android:exported="false" />
         <activity
-            android:name=".ResultGoogle"
+            android:name=".company.ResultGoogle"
             android:exported="false" />
         <activity
-            android:name=".GoogleAssessmentActivity"
+            android:name=".company.GoogleAssessmentActivity"
             android:exported="false" />
         <activity
-            android:name=".CompanyFragment"
+            android:name=".company.CompanyFragment"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"

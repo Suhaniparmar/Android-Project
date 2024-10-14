@@ -1,4 +1,4 @@
-package com.example.codesynctest;
+package com.example.codesynctest.company;
 
 public class Company {
     private String companyName;

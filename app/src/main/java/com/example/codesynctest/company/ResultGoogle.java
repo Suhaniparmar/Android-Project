@@ -1,14 +1,12 @@
-package com.example.codesynctest;
+package com.example.codesynctest.company;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.codesynctest.R;
 
 public class ResultGoogle extends AppCompatActivity {
 
