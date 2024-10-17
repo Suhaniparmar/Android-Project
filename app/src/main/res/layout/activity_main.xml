@@ -1,108 +1,118 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:padding="24dp">
+    android:background="@drawable/bg"
+    android:padding="16dp">
 
-    <!-- Sign Up Title -->
-    <TextView
-        android:id="@+id/Title1"
-        android:layout_width="wrap_content"
+    <!-- CardView for the form -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create new Account"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_margin="16dp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="#311137"
+        android:padding="24dp">
 
-    <!-- Already Registered text -->
-    <TextView
-        android:id="@+id/alreadyRegisteredText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Already Registered?"
-        android:textColor="#A4A4A4"
-        android:textSize="14sp"
-        android:layout_below="@id/Title1"
-        android:layout_marginTop="8dp"
-        android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <!-- Log in Link -->
-    <TextView
+            <!-- Sign Up Title -->
+            <TextView
+                android:id="@+id/Title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create New Account"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_gravity="center" />
 
-        android:id="@+id/loginLink1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log in"
-        android:textColor="#00A000"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_toRightOf="@id/alreadyRegisteredText1"
-        android:layout_below="@id/Title1"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="4dp"
-        android:layout_alignBaseline="@id/alreadyRegisteredText1" />
+            <!-- Already Registered text -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp">
 
-    <!-- Name Field -->
-    <EditText
-        android:id="@+id/nameEditText1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:hint="NAME"
+                <TextView
+                    android:id="@+id/alreadyRegisteredText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already Registered?"
+                    android:textColor="#A4A4A4"
+                    android:textSize="14sp" />
 
-        android:padding="16dp"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:layout_below="@id/loginLink1"
-        android:textColorHint="#FFFFFF" />
+                <!-- Log in Link -->
+                <TextView
+                    android:id="@+id/loginLink1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Log in"
+                    android:textColor="#B02DC7"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
 
-    <!-- Email Field -->
-    <EditText
-        android:id="@+id/emailEditText1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:hint="EMAIL"
+            <!-- Name Field -->
+            <EditText
+                android:id="@+id/nameEditText1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="NAME"
+                android:backgroundTint="#44436F"
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textColorHint="#A4A4A4"
+                android:layout_marginTop="16dp" />
 
-        android:padding="16dp"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:layout_below="@id/nameEditText1"
-        android:textColorHint="#FFFFFF"
-        android:inputType="textEmailAddress" />
+            <!-- Email Field -->
+            <EditText
+                android:id="@+id/emailEditText1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="EMAIL"
+                android:backgroundTint="#44436F"
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textColorHint="#A4A4A4"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="16dp" />
 
-    <!-- Password Field -->
-    <EditText
-        android:id="@+id/passwordEditText1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:hint="PASSWORD"
+            <!-- Password Field -->
+            <EditText
+                android:id="@+id/passwordEditText1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="PASSWORD"
+                android:backgroundTint="#44436F"
+                android:padding="16dp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textColorHint="#A4A4A4"
+                android:inputType="textPassword"
+                android:layout_marginTop="16dp" />
 
-        android:padding="16dp"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:layout_below="@id/emailEditText1"
-        android:textColorHint="#FFFFFF"
-        android:inputType="textPassword" />
+            <!-- Sign Up Button -->
+            <Button
+                android:id="@+id/signUpButton1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Sign Up"
+                android:textColor="#FFFFFF"
+                android:textAllCaps="false"
+                android:backgroundTint="#61166D"
+                android:textSize="16sp"
+                android:layout_marginTop="24dp" />
 
-    <!-- Sign Up Button -->
-    <Button
-        android:id="@+id/signUpButton1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="sign up"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:backgroundTint="#00A000"
+        </LinearLayout>
 
-        android:layout_marginTop="24dp"
-        android:layout_below="@id/passwordEditText1" />
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
